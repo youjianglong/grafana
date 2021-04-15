@@ -16,7 +16,7 @@ COPY emails emails
 ENV NODE_ENV production
 RUN yarn build
 
-FROM golang:1.15.1 AS go-builder
+FROM golang:1.16.3 AS go-builder
 
 WORKDIR /src/grafana
 
@@ -31,7 +31,7 @@ RUN go run build.go build
 
 FROM ubuntu:20.04
 
-LABEL maintainer="Grafana team <hello@grafana.com>"
+LABEL maintainer="You <you.jianglong@gmail.com>"
 EXPOSE 3000
 
 ARG GF_UID="472"

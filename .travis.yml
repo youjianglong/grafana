@@ -4,10 +4,10 @@ services:
   - docker
 
 before_install:
-  - docker pull node:14.15.5-alpine3.13
-  - docker pull golang:1.16.1-alpine3.13
-  - docker pull alpine:3.13
+  - docker pull node:14.15.1-slim
+  - docker pull golang:1.16.3
+  - docker pull ubuntu:20.04
   - docker images -a
 
 script:
-  - docker build --tag youjianglong/grafana:dev .
+  - docker build --tag youjianglong/grafana:dev -f Dockerfile.ubuntu .
