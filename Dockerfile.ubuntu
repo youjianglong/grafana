@@ -2,7 +2,7 @@ FROM node:14.15.1-slim AS js-builder
 
 WORKDIR /usr/src/app/
 
-RUN apt-get update -y && apt-get install git
+RUN apt-get update -y && apt-get install -y git
 
 COPY package.json yarn.lock ./
 COPY packages packages
