@@ -15,7 +15,7 @@ COPY packages packages
 
 RUN apk add --no-cache git
 
-RUN yarn install --pure-lockfile --no-progress
+RUN yarn install --pure-lockfile || true
 
 COPY tsconfig.json .eslintrc .editorconfig .browserslistrc .prettierrc.js ./
 COPY public public
